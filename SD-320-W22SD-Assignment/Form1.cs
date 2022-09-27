@@ -89,11 +89,21 @@ namespace SD_320_W22SD_Assignment
         private void button_Sign_Click(object sender, EventArgs e)
         {
 
-        }       
+        }
 
         private void button_Point_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void label_StoredOperand_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_NumberDisplay_Click(object sender, EventArgs e)
+        {
+
+        }  
     }
 }

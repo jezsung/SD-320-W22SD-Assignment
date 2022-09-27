@@ -46,6 +46,8 @@
             this.button_Multiply = new System.Windows.Forms.Button();
             this.button_Divide = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
+            this.label_NumberDisplay = new System.Windows.Forms.Label();
+            this.label_StoredOperand = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_Number1
@@ -228,11 +230,37 @@
             this.button_Delete.UseVisualStyleBackColor = true;
             this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
+            // label_NumberDisplay
+            // 
+            this.label_NumberDisplay.AutoSize = true;
+            this.label_NumberDisplay.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_NumberDisplay.Location = new System.Drawing.Point(646, 142);
+            this.label_NumberDisplay.Name = "label_NumberDisplay";
+            this.label_NumberDisplay.Size = new System.Drawing.Size(107, 86);
+            this.label_NumberDisplay.TabIndex = 18;
+            this.label_NumberDisplay.Text = "10";
+            this.label_NumberDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_NumberDisplay.Click += new System.EventHandler(this.label_NumberDisplay_Click);
+            // 
+            // label_StoredOperand
+            // 
+            this.label_StoredOperand.AutoSize = true;
+            this.label_StoredOperand.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_StoredOperand.Location = new System.Drawing.Point(677, 74);
+            this.label_StoredOperand.Name = "label_StoredOperand";
+            this.label_StoredOperand.Size = new System.Drawing.Size(76, 45);
+            this.label_StoredOperand.TabIndex = 19;
+            this.label_StoredOperand.Text = "5+5";
+            this.label_StoredOperand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_StoredOperand.Click += new System.EventHandler(this.label_StoredOperand_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 878);
+            this.Controls.Add(this.label_StoredOperand);
+            this.Controls.Add(this.label_NumberDisplay);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Divide);
             this.Controls.Add(this.button_Multiply);
@@ -254,6 +282,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -277,5 +306,7 @@
         private Button button_Multiply;
         private Button button_Divide;
         private Button button_Delete;
+        private Label label_NumberDisplay;
+        private Label label_StoredOperand;
     }
 }
