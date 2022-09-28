@@ -2,7 +2,7 @@ namespace SD_320_W22SD_Assignment
 {
     public partial class Form1 : Form
     {
-        private string _numberDisplay = "100";
+        private string _numberDisplay = "0";
         public string NumberDisplay
         {
             get
@@ -11,8 +11,16 @@ namespace SD_320_W22SD_Assignment
             }
             set
             {
-                label_NumberDisplay.Text = value;
-                _numberDisplay = value;
+                if (value.Length > 1 && value.StartsWith("0"))
+                {
+                    label_NumberDisplay.Text = value.Substring(1);
+                    _numberDisplay = value.Substring(1);
+                }
+                else
+                {
+                    label_NumberDisplay.Text = value;
+                    _numberDisplay = value;
+                }
             }
         }
 
@@ -24,7 +32,11 @@ namespace SD_320_W22SD_Assignment
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay.Length > 0)
+            if (NumberDisplay.Length == 1)
+            {
+                NumberDisplay = "0";
+            }
+            else if (NumberDisplay.Length > 0)
             {
                 NumberDisplay = NumberDisplay.Remove(NumberDisplay.Length - 1);
             }
@@ -57,61 +69,79 @@ namespace SD_320_W22SD_Assignment
 
         private void button_Number1_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "1";
         }
 
         private void button_Number2_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "2";
         }
 
         private void button_Number3_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "3";
         }
 
         private void button_Number4_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "4";
         }
 
         private void button_Number5_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "5";
         }
 
         private void button_Number6_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "6";
         }
 
         private void button_Number7_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "7";
         }
 
         private void button_Number8_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "8";
         }
 
         private void button_Number9_Click(object sender, EventArgs e)
         {
-
+            NumberDisplay += "9";
         }
         private void button_Number0_Click(object sender, EventArgs e)
         {
-
+            if (NumberDisplay.Length > 0 && NumberDisplay != "0")
+            {
+                NumberDisplay += "0";
+            }
         }
 
         private void button_Sign_Click(object sender, EventArgs e)
         {
+            if (NumberDisplay == "0")
+            {
+                return;
+            }
 
+            if (NumberDisplay.First() != '-')
+            {
+                NumberDisplay = '-' + NumberDisplay;
+            }
+            else
+            {
+                NumberDisplay = NumberDisplay.Remove(0, 1);
+            }
         }
 
         private void button_Point_Click(object sender, EventArgs e)
         {
-
+            if (!NumberDisplay.Contains('.'))
+            {
+                NumberDisplay += '.';
+            }
         }
 
         private void label_StoredOperand_Click(object sender, EventArgs e)
