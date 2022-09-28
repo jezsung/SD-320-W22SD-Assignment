@@ -2,8 +2,8 @@ namespace SD_320_W22SD_Assignment
 {
     public partial class Form1 : Form
     {
-        private string _numberDisplay = "0";
-        public string NumberDisplay
+        private string? _numberDisplay = "0";
+        public string? NumberDisplay
         {
             get
             {
@@ -11,7 +11,11 @@ namespace SD_320_W22SD_Assignment
             }
             set
             {
-                if (value.Length > 1 && value[1] != '.' && value.StartsWith("0"))
+                if (value == null)
+                {
+                    _numberDisplay = value;
+                }
+                else if (value.Length > 1 && value[1] != '.' && value.StartsWith("0"))
                 {
                     label_NumberDisplay.Text = value.Substring(1);
                     _numberDisplay = value.Substring(1);
@@ -24,10 +28,28 @@ namespace SD_320_W22SD_Assignment
             }
         }
 
+        private string _storedOperandDisplay = "";
+        public string StoredOperandDisplay
+        {
+            get
+            {
+                return _storedOperandDisplay;
+            }
+            set
+            {
+                label_StoredOperand.Text = value;
+                _storedOperandDisplay = value;
+            }
+        }
+
+        private double _storedValue = 0;
+        private string _storedOperand = "";
+
         public Form1()
         {
             InitializeComponent();
             label_NumberDisplay.Text = NumberDisplay;
+            label_StoredOperand.Text = StoredOperandDisplay;
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
@@ -44,22 +66,142 @@ namespace SD_320_W22SD_Assignment
 
         private void button_Add_Click(object sender, EventArgs e)
         {
+            if (NumberDisplay == null)
+            {
+                _storedOperand = "+";
+                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                return;
+            }
 
+            double number = double.Parse(NumberDisplay);
+
+            switch (_storedOperand)
+            {
+                case "+":
+                    _storedValue += number;
+                    break;
+                case "-":
+                    _storedValue -= number;
+                    break;
+                case "×":
+                    _storedValue *= number;
+                    break;
+                case "÷":
+                    _storedValue /= number;
+                    break;
+                default:
+                    _storedValue = number;
+                    break;
+            }
+            _storedOperand = "+";
+
+            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            NumberDisplay = null;
         }
 
         private void button_Subtract_Click(object sender, EventArgs e)
         {
+            if (NumberDisplay == null)
+            {
+                _storedOperand = "-";
+                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                return;
+            }
 
+            double number = double.Parse(NumberDisplay);
+
+            switch (_storedOperand)
+            {
+                case "+":
+                    _storedValue += number;
+                    break;
+                case "-":
+                    _storedValue -= number;
+                    break;
+                case "×":
+                    _storedValue *= number;
+                    break;
+                case "÷":
+                    _storedValue /= number;
+                    break;
+                default:
+                    _storedValue = number;
+                    break;
+            }
+            _storedOperand = "-";
+
+            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            NumberDisplay = null;
         }
 
         private void button_Multiply_Click(object sender, EventArgs e)
         {
+            if (NumberDisplay == null)
+            {
+                _storedOperand = "×";
+                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                return;
+            }
 
+            double number = double.Parse(NumberDisplay);
+
+            switch (_storedOperand)
+            {
+                case "+":
+                    _storedValue += number;
+                    break;
+                case "-":
+                    _storedValue -= number;
+                    break;
+                case "×":
+                    _storedValue *= number;
+                    break;
+                case "÷":
+                    _storedValue /= number;
+                    break;
+                default:
+                    _storedValue = number;
+                    break;
+            }
+            _storedOperand = "×";
+
+            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            NumberDisplay = null;
         }
 
         private void button_Divide_Click(object sender, EventArgs e)
         {
+            if (NumberDisplay == null)
+            {
+                _storedOperand = "÷";
+                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                return;
+            }
 
+            double number = double.Parse(NumberDisplay);
+
+            switch (_storedOperand)
+            {
+                case "+":
+                    _storedValue += number;
+                    break;
+                case "-":
+                    _storedValue -= number;
+                    break;
+                case "×":
+                    _storedValue *= number;
+                    break;
+                case "÷":
+                    _storedValue /= number;
+                    break;
+                default:
+                    _storedValue = number;
+                    break;
+            }
+            _storedOperand = "÷";
+
+            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            NumberDisplay = null;
         }
 
         private void button_Equal_Click(object sender, EventArgs e)
