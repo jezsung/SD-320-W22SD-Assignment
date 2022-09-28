@@ -42,8 +42,8 @@ namespace SD_320_W22SD_Assignment
             }
         }
 
-        private double _storedValue = 0;
-        private string _storedOperand = "";
+        private double _storedOperand = 0;
+        private string _storedOperation = "";
 
         public Form1()
         {
@@ -68,34 +68,34 @@ namespace SD_320_W22SD_Assignment
         {
             if (NumberDisplay == null)
             {
-                _storedOperand = "+";
-                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                _storedOperation = "+";
+                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
                 return;
             }
 
             double number = double.Parse(NumberDisplay);
 
-            switch (_storedOperand)
+            switch (_storedOperation)
             {
                 case "+":
-                    _storedValue += number;
+                    _storedOperand += number;
                     break;
                 case "-":
-                    _storedValue -= number;
+                    _storedOperand -= number;
                     break;
                 case "×":
-                    _storedValue *= number;
+                    _storedOperand *= number;
                     break;
                 case "÷":
-                    _storedValue /= number;
+                    _storedOperand /= number;
                     break;
                 default:
-                    _storedValue = number;
+                    _storedOperand = number;
                     break;
             }
-            _storedOperand = "+";
+            _storedOperation = "+";
 
-            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
             NumberDisplay = null;
         }
 
@@ -103,34 +103,34 @@ namespace SD_320_W22SD_Assignment
         {
             if (NumberDisplay == null)
             {
-                _storedOperand = "-";
-                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                _storedOperation = "-";
+                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
                 return;
             }
 
             double number = double.Parse(NumberDisplay);
 
-            switch (_storedOperand)
+            switch (_storedOperation)
             {
                 case "+":
-                    _storedValue += number;
+                    _storedOperand += number;
                     break;
                 case "-":
-                    _storedValue -= number;
+                    _storedOperand -= number;
                     break;
                 case "×":
-                    _storedValue *= number;
+                    _storedOperand *= number;
                     break;
                 case "÷":
-                    _storedValue /= number;
+                    _storedOperand /= number;
                     break;
                 default:
-                    _storedValue = number;
+                    _storedOperand = number;
                     break;
             }
-            _storedOperand = "-";
+            _storedOperation = "-";
 
-            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
             NumberDisplay = null;
         }
 
@@ -138,34 +138,34 @@ namespace SD_320_W22SD_Assignment
         {
             if (NumberDisplay == null)
             {
-                _storedOperand = "×";
-                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                _storedOperation = "×";
+                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
                 return;
             }
 
             double number = double.Parse(NumberDisplay);
 
-            switch (_storedOperand)
+            switch (_storedOperation)
             {
                 case "+":
-                    _storedValue += number;
+                    _storedOperand += number;
                     break;
                 case "-":
-                    _storedValue -= number;
+                    _storedOperand -= number;
                     break;
                 case "×":
-                    _storedValue *= number;
+                    _storedOperand *= number;
                     break;
                 case "÷":
-                    _storedValue /= number;
+                    _storedOperand /= number;
                     break;
                 default:
-                    _storedValue = number;
+                    _storedOperand = number;
                     break;
             }
-            _storedOperand = "×";
+            _storedOperation = "×";
 
-            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
             NumberDisplay = null;
         }
 
@@ -173,34 +173,34 @@ namespace SD_320_W22SD_Assignment
         {
             if (NumberDisplay == null)
             {
-                _storedOperand = "÷";
-                StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+                _storedOperation = "÷";
+                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
                 return;
             }
 
             double number = double.Parse(NumberDisplay);
 
-            switch (_storedOperand)
+            switch (_storedOperation)
             {
                 case "+":
-                    _storedValue += number;
+                    _storedOperand += number;
                     break;
                 case "-":
-                    _storedValue -= number;
+                    _storedOperand -= number;
                     break;
                 case "×":
-                    _storedValue *= number;
+                    _storedOperand *= number;
                     break;
                 case "÷":
-                    _storedValue /= number;
+                    _storedOperand /= number;
                     break;
                 default:
-                    _storedValue = number;
+                    _storedOperand = number;
                     break;
             }
-            _storedOperand = "÷";
+            _storedOperation = "÷";
 
-            StoredOperandDisplay = $"{_storedValue} {_storedOperand}";
+            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
             NumberDisplay = null;
         }
 
