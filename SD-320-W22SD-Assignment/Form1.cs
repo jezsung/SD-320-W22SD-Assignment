@@ -11,7 +11,7 @@ namespace SD_320_W22SD_Assignment
             }
             set
             {
-                if (value.Length > 1 && value.StartsWith("0"))
+                if (value.Length > 1 && value[1] != '.' && value.StartsWith("0"))
                 {
                     label_NumberDisplay.Text = value.Substring(1);
                     _numberDisplay = value.Substring(1);
