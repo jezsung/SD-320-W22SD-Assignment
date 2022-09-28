@@ -2,78 +2,43 @@ namespace SD_320_W22SD_Assignment
 {
     public partial class Form1 : Form
     {
-        private string? _numberDisplay = "0";
-        public string? NumberDisplay
-        {
-            get
-            {
-                return _numberDisplay;
-            }
-            set
-            {
-                if (value == null)
-                {
-                    _numberDisplay = value;
-                }
-                else if (value.Length > 1 && value[1] != '.' && value.StartsWith("0"))
-                {
-                    label_NumberDisplay.Text = value.Substring(1);
-                    _numberDisplay = value.Substring(1);
-                }
-                else
-                {
-                    label_NumberDisplay.Text = value;
-                    _numberDisplay = value;
-                }
-            }
-        }
-
-        private string _storedOperandDisplay = "";
-        public string StoredOperandDisplay
-        {
-            get
-            {
-                return _storedOperandDisplay;
-            }
-            set
-            {
-                label_StoredOperand.Text = value;
-                _storedOperandDisplay = value;
-            }
-        }
-
-        private double _storedOperand = 0;
-        private string _storedOperation = "";
+        private string _numberDisplay = "";
+        private double? _storedOperand = null;
+        private string? _storedOperation = null;
 
         public Form1()
         {
             InitializeComponent();
-            label_NumberDisplay.Text = NumberDisplay;
-            label_StoredOperand.Text = StoredOperandDisplay;
+            label_NumberDisplay.Text = "";
+            label_StoredOperand.Text = "";
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay.Length == 1)
+            if (_numberDisplay.Length == 0)
             {
-                NumberDisplay = "0";
+                return;
             }
-            else if (NumberDisplay.Length > 0)
+
+            if (_numberDisplay.Length > 0)
             {
-                NumberDisplay = NumberDisplay.Remove(NumberDisplay.Length - 1);
+                _numberDisplay = _numberDisplay.Remove(_numberDisplay.Length - 1);
+                label_NumberDisplay.Text = _numberDisplay;
             }
         }
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay == null)
+            if (_numberDisplay.Length == 0)
             {
                 _storedOperation = "+";
-                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
+
+                label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+
                 return;
             }
 
-            double number = double.Parse(NumberDisplay);
+            double number = double.Parse(_numberDisplay);
 
             switch (_storedOperation)
             {
@@ -93,22 +58,26 @@ namespace SD_320_W22SD_Assignment
                     _storedOperand = number;
                     break;
             }
+
+            _numberDisplay = "";
             _storedOperation = "+";
 
-            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
-            NumberDisplay = null;
+            label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+            label_NumberDisplay.Text = "";
         }
 
         private void button_Subtract_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay == null)
+            if (_numberDisplay.Length == 0)
             {
                 _storedOperation = "-";
-                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
+
+                label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+
                 return;
             }
 
-            double number = double.Parse(NumberDisplay);
+            double number = double.Parse(_numberDisplay);
 
             switch (_storedOperation)
             {
@@ -128,22 +97,26 @@ namespace SD_320_W22SD_Assignment
                     _storedOperand = number;
                     break;
             }
+
+            _numberDisplay = "";
             _storedOperation = "-";
 
-            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
-            NumberDisplay = null;
+            label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+            label_NumberDisplay.Text = "";
         }
 
         private void button_Multiply_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay == null)
+            if (_numberDisplay.Length == 0)
             {
                 _storedOperation = "×";
-                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
+
+                label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+
                 return;
             }
 
-            double number = double.Parse(NumberDisplay);
+            double number = double.Parse(_numberDisplay);
 
             switch (_storedOperation)
             {
@@ -163,22 +136,26 @@ namespace SD_320_W22SD_Assignment
                     _storedOperand = number;
                     break;
             }
+
+            _numberDisplay = "";
             _storedOperation = "×";
 
-            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
-            NumberDisplay = null;
+            label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+            label_NumberDisplay.Text = "";
         }
 
         private void button_Divide_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay == null)
+            if (_numberDisplay.Length == 0)
             {
                 _storedOperation = "÷";
-                StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
+
+                label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+
                 return;
             }
 
-            double number = double.Parse(NumberDisplay);
+            double number = double.Parse(_numberDisplay);
 
             switch (_storedOperation)
             {
@@ -198,10 +175,12 @@ namespace SD_320_W22SD_Assignment
                     _storedOperand = number;
                     break;
             }
+
+            _numberDisplay = "";
             _storedOperation = "÷";
 
-            StoredOperandDisplay = $"{_storedOperand} {_storedOperation}";
-            NumberDisplay = null;
+            label_StoredOperand.Text = $"{_storedOperand} {_storedOperation}";
+            label_NumberDisplay.Text = "";
         }
 
         private void button_Equal_Click(object sender, EventArgs e)
@@ -211,78 +190,109 @@ namespace SD_320_W22SD_Assignment
 
         private void button_Number1_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "1";
+            _numberDisplay = _numberDisplay == "0" ? "1" : _numberDisplay + "1";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number2_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "2";
+            _numberDisplay = _numberDisplay == "0" ? "2" : _numberDisplay + "2";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number3_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "3";
+            _numberDisplay = _numberDisplay == "0" ? "3" : _numberDisplay + "3";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number4_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "4";
+            _numberDisplay = _numberDisplay == "0" ? "4" : _numberDisplay + "4";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number5_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "5";
+            _numberDisplay = _numberDisplay == "0" ? "5" : _numberDisplay + "5";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number6_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "6";
+            _numberDisplay = _numberDisplay == "0" ? "6" : _numberDisplay + "6";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number7_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "7";
+            _numberDisplay = _numberDisplay == "0" ? "7" : _numberDisplay + "7";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number8_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "8";
+            _numberDisplay = _numberDisplay == "0" ? "8" : _numberDisplay + "8";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Number9_Click(object sender, EventArgs e)
         {
-            NumberDisplay += "9";
+            _numberDisplay = _numberDisplay == "0" ? "9" : _numberDisplay + "9";
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
         private void button_Number0_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay.Length > 0 && NumberDisplay != "0")
+            if (_numberDisplay != "0")
             {
-                NumberDisplay += "0";
+                _numberDisplay += "0";
+
+                label_NumberDisplay.Text = _numberDisplay;
             }
         }
 
         private void button_Sign_Click(object sender, EventArgs e)
         {
-            if (NumberDisplay == "0")
+            if (_numberDisplay.Length == 0 || _numberDisplay == "0")
             {
                 return;
             }
 
-            if (NumberDisplay.First() != '-')
+            if (_numberDisplay.First() != '-')
             {
-                NumberDisplay = '-' + NumberDisplay;
+                _numberDisplay = '-' + _numberDisplay;
             }
             else
             {
-                NumberDisplay = NumberDisplay.Remove(0, 1);
+                _numberDisplay = _numberDisplay.Remove(0, 1);
             }
+
+            label_NumberDisplay.Text = _numberDisplay;
         }
 
         private void button_Point_Click(object sender, EventArgs e)
         {
-            if (!NumberDisplay.Contains('.'))
+            if (_numberDisplay.Length == 0)
             {
-                NumberDisplay += '.';
+                _numberDisplay = "0.";
+
+                label_NumberDisplay.Text = _numberDisplay;
+            }
+
+            if (!_numberDisplay.Contains('.'))
+            {
+                _numberDisplay += '.';
+
+                label_NumberDisplay.Text = _numberDisplay;
             }
         }
 
