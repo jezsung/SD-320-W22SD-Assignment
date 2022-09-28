@@ -234,7 +234,7 @@
             // 
             this.label_NumberDisplay.AutoSize = true;
             this.label_NumberDisplay.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_NumberDisplay.Location = new System.Drawing.Point(646, 142);
+            this.label_NumberDisplay.Location = new System.Drawing.Point(32, 142);
             this.label_NumberDisplay.Name = "label_NumberDisplay";
             this.label_NumberDisplay.Size = new System.Drawing.Size(107, 86);
             this.label_NumberDisplay.TabIndex = 18;
@@ -246,7 +246,7 @@
             // 
             this.label_StoredOperand.AutoSize = true;
             this.label_StoredOperand.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_StoredOperand.Location = new System.Drawing.Point(677, 74);
+            this.label_StoredOperand.Location = new System.Drawing.Point(32, 65);
             this.label_StoredOperand.Name = "label_StoredOperand";
             this.label_StoredOperand.Size = new System.Drawing.Size(76, 45);
             this.label_StoredOperand.TabIndex = 19;

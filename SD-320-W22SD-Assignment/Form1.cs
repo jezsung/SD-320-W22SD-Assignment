@@ -2,14 +2,32 @@ namespace SD_320_W22SD_Assignment
 {
     public partial class Form1 : Form
     {
+        private string _numberDisplay = "100";
+        public string NumberDisplay
+        {
+            get
+            {
+                return _numberDisplay;
+            }
+            set
+            {
+                label_NumberDisplay.Text = value;
+                _numberDisplay = value;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
+            label_NumberDisplay.Text = NumberDisplay;
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-
+            if (NumberDisplay.Length > 0)
+            {
+                NumberDisplay = NumberDisplay.Remove(NumberDisplay.Length - 1);
+            }
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -104,6 +122,6 @@ namespace SD_320_W22SD_Assignment
         private void label_NumberDisplay_Click(object sender, EventArgs e)
         {
 
-        }  
+        }
     }
 }
