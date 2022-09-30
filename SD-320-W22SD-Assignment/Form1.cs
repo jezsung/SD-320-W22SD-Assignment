@@ -495,6 +495,7 @@ namespace SD_320_W22SD_Assignment
 
             string binary = sb.ToString();
 
+            _numberDisplay = "";
             label_NumberDisplay.Text = binary;
         }
 
@@ -543,8 +544,70 @@ namespace SD_320_W22SD_Assignment
                 sum += num * Convert.ToInt32(Math.Pow(2, i));
             }
 
-            _numberDisplay = sum.ToString();
+            _numberDisplay = "";
             label_NumberDisplay.Text = sum.ToString();
+        }
+
+        private void button_LOC_Click(object sender, EventArgs e)
+        {
+            if (_numberDisplay.Length == 0)
+            {
+                label_NumberDisplay.Text = "";
+                return;
+            }
+
+            double number = double.Parse(_numberDisplay);
+
+            if (number < 0 || number != Math.Floor(number))
+            {
+                _numberDisplay = "";
+                _storedOperand = null;
+                _storedOperation = null;
+                label_NumberDisplay.Text = "ERROR";
+                label_StoredOperand.Text = "";
+                return;
+            }
+
+            int integer = (int)number;
+
+            StringBuilder sb = new StringBuilder();
+
+            while (integer > 0)
+            {
+                sb.Insert(0, integer % 2);
+                integer /= 2;
+            }
+
+            string binary = sb.ToString();
+
+            StringBuilder sb2 = new StringBuilder();
+
+            string alphabets = "abcdefghijklmnopqrstuvwxyz";
+
+            try
+            {
+                for (int i = 0; i < binary.Length; i++)
+                {
+                    if (binary[binary.Length - i - 1] == '1')
+                    {
+                        sb2.Append(alphabets[i]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _numberDisplay = "";
+                _storedOperand = null;
+                _storedOperation = null;
+                label_NumberDisplay.Text = "ERROR";
+                label_StoredOperand.Text = "";
+                return;
+            }
+
+            string loc = sb2.ToString();
+
+            _numberDisplay = "";
+            label_NumberDisplay.Text = loc;
         }
     }
 }

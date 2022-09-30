@@ -50,6 +50,7 @@
             this.label_StoredOperand = new System.Windows.Forms.Label();
             this.button_BIN = new System.Windows.Forms.Button();
             this.button_DEC = new System.Windows.Forms.Button();
+            this.button_LOC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Number1
@@ -276,11 +277,22 @@
             this.button_DEC.UseVisualStyleBackColor = true;
             this.button_DEC.Click += new System.EventHandler(this.button_DEC_Click);
             // 
+            // button_LOC
+            // 
+            this.button_LOC.Location = new System.Drawing.Point(396, 319);
+            this.button_LOC.Name = "button_LOC";
+            this.button_LOC.Size = new System.Drawing.Size(150, 46);
+            this.button_LOC.TabIndex = 22;
+            this.button_LOC.Text = "LOC";
+            this.button_LOC.UseVisualStyleBackColor = true;
+            this.button_LOC.Click += new System.EventHandler(this.button_LOC_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 878);
+            this.Controls.Add(this.button_LOC);
             this.Controls.Add(this.button_DEC);
             this.Controls.Add(this.button_BIN);
             this.Controls.Add(this.label_StoredOperand);
@@ -335,5 +347,6 @@
         private Label label_StoredOperand;
         private Button button_BIN;
         private Button button_DEC;
+        private Button button_LOC;
     }
 }
