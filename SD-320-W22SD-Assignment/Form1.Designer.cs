@@ -55,6 +55,8 @@
             // 
             // button_Number1
             // 
+            this.button_Number1.AccessibleDescription = "Types a number 1";
+            this.button_Number1.AccessibleName = "Number 1 Button";
             this.button_Number1.Location = new System.Drawing.Point(32, 466);
             this.button_Number1.Name = "button_Number1";
             this.button_Number1.Size = new System.Drawing.Size(150, 46);
@@ -65,6 +67,8 @@
             // 
             // button_Number2
             // 
+            this.button_Number2.AccessibleDescription = "Types a number 2";
+            this.button_Number2.AccessibleName = "Number 2 Button";
             this.button_Number2.Location = new System.Drawing.Point(215, 466);
             this.button_Number2.Name = "button_Number2";
             this.button_Number2.Size = new System.Drawing.Size(150, 46);
@@ -75,6 +79,8 @@
             // 
             // button_Number3
             // 
+            this.button_Number3.AccessibleDescription = "Types a number 3";
+            this.button_Number3.AccessibleName = "Number 3 Button";
             this.button_Number3.Location = new System.Drawing.Point(396, 466);
             this.button_Number3.Name = "button_Number3";
             this.button_Number3.Size = new System.Drawing.Size(150, 46);
@@ -85,6 +91,8 @@
             // 
             // button_Number4
             // 
+            this.button_Number4.AccessibleDescription = "Types a number 4";
+            this.button_Number4.AccessibleName = "Number 4 Button";
             this.button_Number4.Location = new System.Drawing.Point(32, 538);
             this.button_Number4.Name = "button_Number4";
             this.button_Number4.Size = new System.Drawing.Size(150, 46);
@@ -95,6 +103,8 @@
             // 
             // button_Number5
             // 
+            this.button_Number5.AccessibleDescription = "Types a number 5";
+            this.button_Number5.AccessibleName = "Number 5 Button";
             this.button_Number5.Location = new System.Drawing.Point(215, 538);
             this.button_Number5.Name = "button_Number5";
             this.button_Number5.Size = new System.Drawing.Size(150, 46);
@@ -105,6 +115,8 @@
             // 
             // button_Number6
             // 
+            this.button_Number6.AccessibleDescription = "Types a number 6";
+            this.button_Number6.AccessibleName = "Number 6 Button";
             this.button_Number6.Location = new System.Drawing.Point(396, 538);
             this.button_Number6.Name = "button_Number6";
             this.button_Number6.Size = new System.Drawing.Size(150, 46);
@@ -115,6 +127,8 @@
             // 
             // button_Number7
             // 
+            this.button_Number7.AccessibleDescription = "Types a number 7";
+            this.button_Number7.AccessibleName = "Number 7 Button";
             this.button_Number7.Location = new System.Drawing.Point(32, 610);
             this.button_Number7.Name = "button_Number7";
             this.button_Number7.Size = new System.Drawing.Size(150, 46);
@@ -125,6 +139,8 @@
             // 
             // button_Number8
             // 
+            this.button_Number8.AccessibleDescription = "Types a number 8";
+            this.button_Number8.AccessibleName = "Number 8 Button";
             this.button_Number8.Location = new System.Drawing.Point(215, 610);
             this.button_Number8.Name = "button_Number8";
             this.button_Number8.Size = new System.Drawing.Size(150, 46);
@@ -135,6 +151,8 @@
             // 
             // button_Number9
             // 
+            this.button_Number9.AccessibleDescription = "Types a number 9";
+            this.button_Number9.AccessibleName = "Number 9 Button";
             this.button_Number9.Location = new System.Drawing.Point(396, 610);
             this.button_Number9.Name = "button_Number9";
             this.button_Number9.Size = new System.Drawing.Size(150, 46);
@@ -145,6 +163,8 @@
             // 
             // button_Sign
             // 
+            this.button_Sign.AccessibleDescription = "Makes the number negative or positive";
+            this.button_Sign.AccessibleName = "Sign Button";
             this.button_Sign.Location = new System.Drawing.Point(32, 678);
             this.button_Sign.Name = "button_Sign";
             this.button_Sign.Size = new System.Drawing.Size(150, 46);
@@ -155,6 +175,8 @@
             // 
             // button_Number0
             // 
+            this.button_Number0.AccessibleDescription = "Types a number 0";
+            this.button_Number0.AccessibleName = "Number 0 Button";
             this.button_Number0.Location = new System.Drawing.Point(215, 678);
             this.button_Number0.Name = "button_Number0";
             this.button_Number0.Size = new System.Drawing.Size(150, 46);
@@ -165,6 +187,8 @@
             // 
             // button_Point
             // 
+            this.button_Point.AccessibleDescription = "Adds a floating point";
+            this.button_Point.AccessibleName = "Point Button";
             this.button_Point.Location = new System.Drawing.Point(396, 678);
             this.button_Point.Name = "button_Point";
             this.button_Point.Size = new System.Drawing.Size(150, 46);
@@ -175,6 +199,8 @@
             // 
             // button_Equal
             // 
+            this.button_Equal.AccessibleDescription = "Calculates the result";
+            this.button_Equal.AccessibleName = "Equal Button";
             this.button_Equal.Location = new System.Drawing.Point(603, 678);
             this.button_Equal.Name = "button_Equal";
             this.button_Equal.Size = new System.Drawing.Size(150, 46);
@@ -185,6 +211,8 @@
             // 
             // button_Add
             // 
+            this.button_Add.AccessibleDescription = "Uses addition operator";
+            this.button_Add.AccessibleName = "Addition Button";
             this.button_Add.Location = new System.Drawing.Point(603, 610);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(150, 46);
@@ -195,6 +223,8 @@
             // 
             // button_Subtract
             // 
+            this.button_Subtract.AccessibleDescription = "Uses subtraction operator";
+            this.button_Subtract.AccessibleName = "Subtraction Button";
             this.button_Subtract.Location = new System.Drawing.Point(603, 538);
             this.button_Subtract.Name = "button_Subtract";
             this.button_Subtract.Size = new System.Drawing.Size(150, 46);
@@ -205,6 +235,8 @@
             // 
             // button_Multiply
             // 
+            this.button_Multiply.AccessibleDescription = "Uses multiplication operator";
+            this.button_Multiply.AccessibleName = "Multiplication Button";
             this.button_Multiply.Location = new System.Drawing.Point(603, 466);
             this.button_Multiply.Name = "button_Multiply";
             this.button_Multiply.Size = new System.Drawing.Size(150, 46);
@@ -215,6 +247,8 @@
             // 
             // button_Divide
             // 
+            this.button_Divide.AccessibleDescription = "Uses division operator";
+            this.button_Divide.AccessibleName = "Division Button";
             this.button_Divide.Location = new System.Drawing.Point(603, 393);
             this.button_Divide.Name = "button_Divide";
             this.button_Divide.Size = new System.Drawing.Size(150, 46);
@@ -225,6 +259,8 @@
             // 
             // button_Delete
             // 
+            this.button_Delete.AccessibleDescription = "Deletes a typed number";
+            this.button_Delete.AccessibleName = "Delete Button";
             this.button_Delete.Location = new System.Drawing.Point(396, 393);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(150, 46);
@@ -235,6 +271,8 @@
             // 
             // label_NumberDisplay
             // 
+            this.label_NumberDisplay.AccessibleDescription = "Number typed";
+            this.label_NumberDisplay.AccessibleName = "Number Display";
             this.label_NumberDisplay.AutoSize = true;
             this.label_NumberDisplay.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_NumberDisplay.Location = new System.Drawing.Point(32, 142);
@@ -247,6 +285,8 @@
             // 
             // label_StoredOperand
             // 
+            this.label_StoredOperand.AccessibleDescription = "Stored operand that can be used for the next calculation";
+            this.label_StoredOperand.AccessibleName = "Stored Operand";
             this.label_StoredOperand.AutoSize = true;
             this.label_StoredOperand.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_StoredOperand.Location = new System.Drawing.Point(32, 65);
@@ -259,6 +299,8 @@
             // 
             // button_BIN
             // 
+            this.button_BIN.AccessibleDescription = "Converts decimal to binary";
+            this.button_BIN.AccessibleName = "Binary Convert Button";
             this.button_BIN.Location = new System.Drawing.Point(32, 319);
             this.button_BIN.Name = "button_BIN";
             this.button_BIN.Size = new System.Drawing.Size(150, 46);
@@ -269,6 +311,8 @@
             // 
             // button_DEC
             // 
+            this.button_DEC.AccessibleDescription = "Converts binary to decimal";
+            this.button_DEC.AccessibleName = "Decimal Convert Button";
             this.button_DEC.Location = new System.Drawing.Point(215, 319);
             this.button_DEC.Name = "button_DEC";
             this.button_DEC.Size = new System.Drawing.Size(150, 46);
@@ -279,6 +323,8 @@
             // 
             // button_LOC
             // 
+            this.button_LOC.AccessibleDescription = "Converts decimal to locational numeral";
+            this.button_LOC.AccessibleName = "Locational Numeral Convert Button";
             this.button_LOC.Location = new System.Drawing.Point(396, 319);
             this.button_LOC.Name = "button_LOC";
             this.button_LOC.Size = new System.Drawing.Size(150, 46);
