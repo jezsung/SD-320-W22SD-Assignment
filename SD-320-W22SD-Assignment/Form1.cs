@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SD_320_W22SD_Assignment
 {
     public partial class Form1 : Form
@@ -18,7 +20,7 @@ namespace SD_320_W22SD_Assignment
         }
 
         void Form1_KeyPress(object sender, KeyEventArgs e)
-        {           
+        {
             switch (e.KeyCode)
             {
                 case Keys.D1:
@@ -459,6 +461,90 @@ namespace SD_320_W22SD_Assignment
         private void label_NumberDisplay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_BIN_Click(object sender, EventArgs e)
+        {
+            if (_numberDisplay.Length == 0)
+            {
+                label_NumberDisplay.Text = "";
+                return;
+            }
+
+            double number = double.Parse(_numberDisplay);
+
+            if (number < 0 || number != Math.Floor(number))
+            {
+                _numberDisplay = "";
+                _storedOperand = null;
+                _storedOperation = null;
+                label_NumberDisplay.Text = "ERROR";
+                label_StoredOperand.Text = "";
+                return;
+            }
+
+            int integer = (int)number;
+
+            StringBuilder sb = new StringBuilder();
+
+            while (integer > 0)
+            {
+                sb.Insert(0, integer % 2);
+                integer /= 2;
+            }
+
+            string binary = sb.ToString();
+
+            label_NumberDisplay.Text = binary;
+        }
+
+        private void button_DEC_Click(object sender, EventArgs e)
+        {
+            if (_numberDisplay.Length == 0)
+            {
+                label_NumberDisplay.Text = "";
+                return;
+            }
+
+            double number = double.Parse(_numberDisplay);
+
+            if (number < 0 || number != Math.Floor(number))
+            {
+                _numberDisplay = "";
+                _storedOperand = null;
+                _storedOperation = null;
+                label_NumberDisplay.Text = "ERROR";
+                label_StoredOperand.Text = "";
+                return;
+            }
+
+            int integer = (int)number;
+            string integerString = integer.ToString();
+
+            foreach (char character in integerString)
+            {
+                if (character != '0' && character != '1')
+                {
+                    _numberDisplay = "";
+                    _storedOperand = null;
+                    _storedOperation = null;
+                    label_NumberDisplay.Text = "ERROR";
+                    label_StoredOperand.Text = "";
+                    return;
+                }
+            }
+
+            var reversedBinary = integerString.Reverse();
+            int sum = 0;
+
+            for (int i = 0; i < reversedBinary.Count(); i++)
+            {
+                int num = Convert.ToInt32(Char.GetNumericValue(reversedBinary.ToArray()[i]));
+                sum += num * Convert.ToInt32(Math.Pow(2, i));
+            }
+
+            _numberDisplay = sum.ToString();
+            label_NumberDisplay.Text = sum.ToString();
         }
     }
 }

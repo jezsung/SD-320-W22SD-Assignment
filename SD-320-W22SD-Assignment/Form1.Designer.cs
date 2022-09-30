@@ -48,6 +48,8 @@
             this.button_Delete = new System.Windows.Forms.Button();
             this.label_NumberDisplay = new System.Windows.Forms.Label();
             this.label_StoredOperand = new System.Windows.Forms.Label();
+            this.button_BIN = new System.Windows.Forms.Button();
+            this.button_DEC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Number1
@@ -254,11 +256,33 @@
             this.label_StoredOperand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_StoredOperand.Click += new System.EventHandler(this.label_StoredOperand_Click);
             // 
+            // button_BIN
+            // 
+            this.button_BIN.Location = new System.Drawing.Point(32, 319);
+            this.button_BIN.Name = "button_BIN";
+            this.button_BIN.Size = new System.Drawing.Size(150, 46);
+            this.button_BIN.TabIndex = 20;
+            this.button_BIN.Text = "BIN";
+            this.button_BIN.UseVisualStyleBackColor = true;
+            this.button_BIN.Click += new System.EventHandler(this.button_BIN_Click);
+            // 
+            // button_DEC
+            // 
+            this.button_DEC.Location = new System.Drawing.Point(215, 319);
+            this.button_DEC.Name = "button_DEC";
+            this.button_DEC.Size = new System.Drawing.Size(150, 46);
+            this.button_DEC.TabIndex = 21;
+            this.button_DEC.Text = "DEC";
+            this.button_DEC.UseVisualStyleBackColor = true;
+            this.button_DEC.Click += new System.EventHandler(this.button_DEC_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 878);
+            this.Controls.Add(this.button_DEC);
+            this.Controls.Add(this.button_BIN);
             this.Controls.Add(this.label_StoredOperand);
             this.Controls.Add(this.label_NumberDisplay);
             this.Controls.Add(this.button_Delete);
@@ -309,5 +333,7 @@
         private Button button_Delete;
         private Label label_NumberDisplay;
         private Label label_StoredOperand;
+        private Button button_BIN;
+        private Button button_DEC;
     }
 }
