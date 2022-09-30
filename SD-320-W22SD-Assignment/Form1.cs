@@ -9,8 +9,70 @@ namespace SD_320_W22SD_Assignment
         public Form1()
         {
             InitializeComponent();
+
+            KeyPreview = true;
+            KeyDown += new KeyEventHandler(Form1_KeyPress);
+
             label_NumberDisplay.Text = "";
             label_StoredOperand.Text = "";
+        }
+
+        void Form1_KeyPress(object sender, KeyEventArgs e)
+        {           
+            switch (e.KeyCode)
+            {
+                case Keys.D1:
+                    button_Number1_Click(sender, e);
+                    break;
+                case Keys.D2:
+                    button_Number2_Click(sender, e);
+                    break;
+                case Keys.D3:
+                    button_Number3_Click(sender, e);
+                    break;
+                case Keys.D4:
+                    button_Number4_Click(sender, e);
+                    break;
+                case Keys.D5:
+                    button_Number5_Click(sender, e);
+                    break;
+                case Keys.D6:
+                    button_Number6_Click(sender, e);
+                    break;
+                case Keys.D7:
+                    button_Number7_Click(sender, e);
+                    break;
+                case Keys.D8:
+                    button_Number8_Click(sender, e);
+                    break;
+                case Keys.D9:
+                    button_Number9_Click(sender, e);
+                    break;
+                case Keys.D0:
+                    button_Number0_Click(sender, e);
+                    break;
+                case Keys.OemPeriod:
+                    button_Point_Click(sender, e);
+                    break;
+                case Keys.Oemplus:
+                    button_Add_Click(sender, e);
+                    break;
+                case Keys.OemMinus:
+                    button_Subtract_Click(sender, e);
+                    break;
+                case Keys.X:
+                    button_Multiply_Click(sender, e);
+                    break;
+                case Keys.OemQuestion:
+                    button_Divide_Click(sender, e);
+                    break;
+                case Keys.Enter:
+                    button_Equal_Click(sender, e);
+                    break;
+                case Keys.Back:
+                    button_Delete_Click(sender, e);
+                    break;
+            }
         }
 
         private void button_Delete_Click(object sender, EventArgs e)

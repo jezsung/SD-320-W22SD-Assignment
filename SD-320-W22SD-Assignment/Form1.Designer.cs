@@ -279,6 +279,7 @@
             this.Controls.Add(this.button_Number3);
             this.Controls.Add(this.button_Number2);
             this.Controls.Add(this.button_Number1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
